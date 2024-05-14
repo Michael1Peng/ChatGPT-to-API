@@ -30,7 +30,7 @@ func ConvertAPIRequest(api_request official_types.APIRequest, account string, se
 		} else {
 			chatgpt_request.Model = "gpt-4"
 		}
-		if len(matches) == 3 {
+		if len(matches) == 3 && matches[2] != "" {
 			chatgpt_request.ConversationMode.Kind = "gizmo_interaction"
 			chatgpt_request.ConversationMode.GizmoId = "g-" + matches[2]
 		}
